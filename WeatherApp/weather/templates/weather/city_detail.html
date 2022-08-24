@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Информация
+{% endblock %}
+
+{% block content %}
+<div class="col-5 offset-3">
+    <h2>Погода в городе {{info.city}}е сейчас</h2>
+    <div class="alert alert-info">
+        <div class="row">
+            <div class="col-7">
+                <b>Температура: </b>{{info.temp}}<sup>0</sup><br>
+                <b>По ощущениям: </b>{{info.feels_like}}<sup>0</sup><br>
+                <b>Влажность: </b>{{info.humidity}} %<br>
+                <b>Ветер: </b>{{info.wind}} m/s<br>
+            </div>
+            <div class="col-2 offset-1">
+                <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" width="150%">
+                <h6 class="fw-bold text-center">{{info.main}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
